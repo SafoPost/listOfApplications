@@ -1,0 +1,263 @@
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #676767;
+}
+
+input, button, textarea {
+  outline: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+textarea {
+  font-family: inherit;
+  min-height: min-content;
+  max-height: max-content;
+}
+
+.content {
+  max-width: 1200px;
+  margin: auto;
+  background-color: #eef2f4;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+
+.buttons-block {
+  margin-left: auto;
+  margin-right: 0;
+  margin-bottom: 15px;
+}
+
+.button {
+  min-width: 100px;
+  min-height: 40px;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #bbed21;
+  
+}
+
+.button.save {
+  display: block;
+}
+.button.save.btn-hidden {
+  display: none;
+}
+.action.btn-hidden {
+  display: none;
+}
+
+.filter-button {
+  background-color: #3bc8f5;
+  color: #fff;
+  margin-right: 10px;
+}
+.filter-reset {
+  background-color: transparent;
+  border: 1px solid #3bc8f5;
+  color: #3bc8f5;
+}
+
+table {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  counter-reset: calc(rowNumber + 1);
+  /* counter-reset: rowNumber; */
+  border-collapse: collapse;
+  border: 10px solid #fff;
+
+}
+
+table tr {
+  counter-increment: rowNumber;
+}
+
+table tr th {
+  width: 20%;
+  text-align: left;
+  background-color: #fff;
+  padding: 15px 5px;
+}
+
+table tr th:first-child {
+  width: 50px;
+}
+
+table tr {
+  min-height: 50px;
+  border-color: #f7f7f7;
+  background-color: #f7f7f7;
+  border-top: 1px solid #f7f7f7;
+}
+
+table tr td {
+  padding: 0 10px 5px;
+
+}
+
+table tr:nth-child(2n) {
+  border-color: #eef2f4;
+  background-color: #eef2f4;
+  border-top: 1px solid #eef2f4;
+}
+
+table tr td:first-child::before {
+  content: counter(rowNumber);
+  margin-right: 10px;
+}
+
+.td-input {
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  padding: 5px 7px;
+  border-radius: 3px;
+}
+textarea.td-input {
+  margin-top: 10px;
+  padding-top: 10px;
+  resize: none;
+}
+
+.td-input.active {
+  /* min-height: 30px; */
+  border: 1px solid #bebebe;
+  background-color: #fff;
+  resize: vertical;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.overlay.visible {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #bebebe;
+  padding: 15px;
+  margin: auto;
+  width: 400px;
+  display: none;
+  flex-direction: column;
+}
+
+.modal.visible {
+  display: flex;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  opacity: 0.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+}
+.modal-close:hover {
+  opacity: 1;
+}
+.modal-close:before, .modal-close:after {
+  position: absolute;
+  content: '';
+  height: 12px;
+  width: 2px;
+  background-color: #676767;
+}
+.modal-close:before {
+  transform: rotate(45deg);
+}
+.modal-close:after {
+  transform: rotate(-45deg);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.modal-input {
+  min-height: 30px;
+  resize: vertical;
+  border: 1px solid #bebebe;
+  padding-left: 10px;
+}
+.modal-input::placeholder {
+  color: #bebebe;
+}
+.modal-textarea {
+  min-height: 50px;
+}
+
+.modal-button {
+  align-self: center;
+  margin-top: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttons-group {
+  margin: auto;
+  margin-top: 20px;
+}
+.buttons-group .button {
+  min-width: 140px;
+}
+
+.filter-label {
+  width: 100%;
+}
+.dash {
+  width: 15px;
+  height: 2px;
+  background-color: #bebebe;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #bebebe;
+  margin-top: 40px;
+}

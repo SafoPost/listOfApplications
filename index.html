@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content">
+    <div id="modal-buttons-block" class="buttons-block">
+      <button id="filter-modal-open" class="button filter-button">Фильтр</button>
+      <button id="new-modal-open" class="button add-application">Добавить запись</button>
+    </div>
+    <table class="list" id="appList">
+      <tr class="title-block">
+        <th>№</th>
+        <th>Дата создания</th>
+        <th>Название</th>
+        <th>Текст заявки</th>
+        <th>Телефон</th>
+        <th>Редактирование/удаление</th>
+      </tr>
+    </table>
+  </div>
+  <div class="overlay">
+    <div class="modal" id="new-app-modal">
+      <button id="newModalClose" class="modal-close"></button>
+      <form class="modal-content" id="addAppForm">
+        <h3 class="modal-title">Добавление новой записи</h3>
+
+        <label for="modalAppName" class="label">Название заявки</label>
+        <input type="text" class="modal-input" id="modalAppName" required>
+
+        <label for="modalAppText" class="label">Текст заявки</label>
+        <textarea id="modalAppText" class="modal-input modal-textarea" required></textarea>
+
+        <label for="modalAppPhone" class="label">Номер телефона</label>
+        <input type="text" class="modal-input phone" id="modalAppPhone" required>
+
+        <button id="addApplication" class="button add-application modal-button">Добавить</button>
+      </form>
+    </div>
+
+    <div class="modal" id="filter-app-modal">
+      <button id="filterModalClose" class="modal-close"></button>
+      <form class="modal-content" id="filterAppForm">
+        
+        <span class="label">Номер телефона</span>
+        <input type="text" class="modal-input phone" id="filterAppPhone">
+        
+        <div class="input-group">
+          <span class="label filter-label">Дата создания заявки</span>
+          <input type="text" class="modal-input" id="filterStartDate" placeholder="20.03.2021">
+          <span class="dash"></span>
+          <input type="text" class="modal-input" id="filterFinishDate" placeholder="25.03.2021">
+        </div>
+
+        <span class="line"></span>
+        
+        <div class="buttons-group">
+          <button id="filterApplication" class="button filter-button">Найти</button>
+          <button id="filterReset" class="button filter-reset">Сбросить</button>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+  <script src="maskPhone.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
